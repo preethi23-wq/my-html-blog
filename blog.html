@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Blog - Streamlit Tutorial</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                background-color: lightblue;
+                color: #333;
+                line-height: 1.6;
+            }
+            header {
+                background-color: #2c3e50;
+                color: white;
+                padding: 20px;
+                text-align: center;
+            }
+            .container {
+                max-width: 900px;
+                margin: auto;
+                padding: 30px;
+                background-color: #fff;
+                box-shadow: 0 2px 10px rgba(red, green, blue, alpha);
+            }
+            h1, h2 {
+                color: #2c3e50;
+            }
+            .code-title {
+                background: #444;
+                color: #fff;
+                padding: 5px 10px;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                margin-top: 20px;
+                font-family: monospace;
+            }
+            pre code{
+                background-color: #272822;
+                color: #f8f8f2;
+                display:block;
+                padding: 15px;
+                border-radius: 0 0 8px 8px;
+                overflow-x: auto;
+                font-size: 14px;
+                font-family: monospace;
+                white-space: pre;
+            }
+            u1 {
+                background: #f0f0f0;
+                padding: 20px;
+                border-radius: 8px;
+            }
+            code {
+                background-color: #e0e0e0;
+                padding: 2px 5px;
+                border-radius: 4px;
+                font-family: monospace;
+            }
+            a.button {
+                display: inline-block;
+                padding: 12px 24px;
+                background-color: #2c3e50;
+                color: white;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: bold;
+                margin-top: 20px;
+            }
+            footer {
+                margin-top: 50px;
+                text-align: center;
+                color: #777;
+                font-size: 14px;
+                padding: 20px;
+            }
+        </style>
+    </head>
+<body>
+    <header>
+        <h1>First Blog: File Upload Using Streamlit</h1>
+    <p>Welcome to my first blog on data science with python! In this post i'll show you how to build a python app with streamlit to uploade files.
+        python is one of the most popular and beginner-friendly programming languages used,it is widly used in the fields like
+        Data science,machine learning,web development,automation and more.python library used as pandas,numpy,streamlit,flask etc.</p>
+    <p>streamlit is an open source python library that makes it easy to create and share interactive web apps for data science and
+        machine learning projects.</p>
+    </header>
+    <div class="container">
+        <h2>Introduction</h2>
+        <p>This blog showcases a beginner-friendly data science project built using python 
+            and streamlit,where users can upload and preview files like images or CSVs directly
+            through a web app.The project demonstrates how to build an interactive web interface
+            without any HTML or backend development.Using Streamlit,the file_uploader() widget allows
+            users to select and upload files from ther system.If the uploaded file is an image(.png, .jpg),
+            it is displayed on the page using PIL(python imaging library).If the file is a CSV,it is read using
+            the pandas library and shown in a structured,scrollable table format.This kind of interface is especially
+            useful in real-world data science workflows where teams often need to share tools to inspect and clean data. 
+            The simplicity of the code also highlights how quickly you can build useful tools in python
+            without needing advanced web development skills.This project is a great first step for anyone
+            starting out in data science, machine learning, or Python app development.</p>
+        <p>why this project is important
+            1.it's a real-world example of how python can be used to build interactive tools.
+            2.you learn data hadling(CSV)and media processing(images).
+            3.you learn the basics of streamlit,which is very useful in data science to make 
+              dashboards and demos.</p>
+        <p>Explanation of the code: 
+            The Streamlit app begins with importing essential libraties:
+            1.streamlit for the user interface
+            2.pandas for working with CSV files
+            3.PIL.Image for handling image uploads.
+            we then use st.title() and st.markdown() to present the blog-style headings. 
+            the file_uploader() widget allows users to upload .png, .jpg, .jpeg, or .csv files.
+            If an image is uploaded,it's displayed using st.imagr().If a CSV file is uploaded,it's 
+            read into a Dataframe using pandas.read_csv() and previewed using st.dataframe().This 
+            creates a simple yet powerful interactive app for data input and preview.</p>
+    <h2>Streamlit code</h2>
+    <div class="code-title"></div>
+    <pre><code>import streamlit as st 
+        import pandas as pd
+        from PIL import Image
+        st.title("Upload Your File")
+        uploaded_file = st.file_uploader("Choose an image or CSV", type=["png", "jpg, "csv])
+        if uploaded_file:
+        if uploaded_file.type.startswitch("image/"):
+        st.image(Image.open(uploaded_file),
+        caption="Uploaded Image",
+        use_column_width=True)
+        elif uploaded_file.type == "text/csv":
+        df=pd.read_csv(uploaded_file)
+        st.write("Preview of CSV:")
+        st.dataframe(df.head())
+    </code></pre>
+    <h2>How to Run It</h2>
+    <ul>
+        <li>Save the code in a final named <code>app.py</code></li>
+        <li>Oen terminal and run:<code>streamlit run app.py</code></li>
+        <li>Upload a file and test the app on your browser!</li>
+    </ul>
+    <H2>Try it live!</H2>
+    <p>You can try the live version of the app below:</p>
+    <a class="button"
+href="Network URL:https://app-blog-rb7mkyyjt9cpqjwz3kphla.streamlit.app/" target="_blank" style="display: inline-block;
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;">
+      Launch my streamlit app 
+    </a>
+    </div>
+    <footer>
+        Thanks for reading! Stay tuned for more streamlit tutorials.
+    </footer>
+</body>
+</html>
