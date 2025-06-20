@@ -3,20 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <title>My Blog - Updated Streamlit Tutorial</title>
-        <link
-        href="https://fonts.googlepis.com/css2?family=poppins&display=swap"
-        rel="stylesheet"
+        <link href="https://fonts.googlepis.com/css2?family=poppins&display=swap" rel="stylesheet">
         <style>
             body {
-                font-family: 'poppins', Arial, sans-serif;
+                font-family: 'poppins', sans-serif;
                 margin: 0;
-                background-color: lightpink;
+                background-color: lightblue;
                 color: #333;
                 line-height: 1.6;
+                padding: 0;
             }
             header {
                 background-color: #6a5acd;
-                color: black;
+                color: white;
                 padding: 20px;
                 text-align: center;
             }
@@ -25,10 +24,13 @@
                 margin: auto;
                 padding: 30px;
                 background-color: #fff;
-                box-shadow: 0 2px 10px rgba(0,0,0,0,1);
+                box-shadow: 0 0 15px rgba(0,0,0,0,0.1);
             }
             h1, h2 {
                 color: #6a5acd;
+            }
+            p {
+                margin: 12px 0;
             }
             .code-title {
                 background: #444;
@@ -47,18 +49,6 @@
                 border-radius: 0 0 8px 8px;
                 overflow-x: auto;
                 font-size: 14px;
-                font-family: monospace;
-                white-space: pre;
-            }
-            u1 {
-                background: #f0f0f0;
-                padding: 20px;
-                border-radius: 8px;
-            }
-            code {
-                background-color: #e0e0e0;
-                padding: 2px 5px;
-                border-radius: 4px;
                 font-family: monospace;
             }
             a.button {
@@ -83,6 +73,14 @@
                 padding: 15px;
                 border-radius: 8px;
                 margin-bottom: 30px;
+            }
+            .quote {
+                background-color: #e6e6fa;
+                font-style: italic;
+                padding: 15px;
+                border-left: 5px solid #6a5acd;
+                margin: 25px 0;
+                border-radius: 5px;
             }
         </style>
     </head>
@@ -124,17 +122,19 @@
             without needing advanced web development skills.This project is a great first step for anyone
             starting out in data science, machine learning, or Python app development. </p>
         <h2 id="why">💡why this project is important</h2>
-        <p>
-            1.it's a real-world example of how python can be used to build interactive tools.
-            2.you learn data hadling(CSV)and media processing(images).
-            3.you learn the basics of streamlit,which is very useful in data science to make 
-              dashboards and demos. </p>
+        <ul>
+           <li>1.it's a real-world example of how python can be used to build interactive tools.</li>
+            <li>2.you learn data hadling(CSV)and media processing(images).</li>
+            <li>3.you learn the basics of streamlit,which is very useful in data science to make 
+              dashboards and demos.</li>
+        </ul>
         <h2 id="exp">🔍Explanation of the code:</h2>
-        <p> 
-            The Streamlit app begins with importing essential libraties:
+        <ul> 
+            <p>The Streamlit app begins with importing essential libraties:</p>
             1.streamlit for the user interface.<br>
             2.pandas for working with CSV files.<br>
-            3.PIL.Image for handling image uploads.</p>
+            3.PIL.Image for handling image uploads.<br>
+        </ul>
             <p>The app imports essential libraries like:</p>
             <u1>
                 <li><strong>Streamlit</strong> for the interface</li>
@@ -146,8 +146,7 @@
             If an image is uploaded,it's displayed using st.imagr().If a CSV file is uploaded,it's 
             read into a Dataframe using pandas.read_csv() and previewed using st.dataframe().This 
             creates a simple yet powerful interactive app for data input and preview.</p> 
-    <h2 id="code">Streamlit code</h2>
-    <div class="code-title"></div>
+    <h2 id="code" class="code-title"> streamlit code</h2>
     <pre><code>
         import streamlit as st 
         import pandas as pd
@@ -172,8 +171,7 @@
     </ul>
     <h2 id="live">🌐Try it live!</h2>
     <p>You can try the live version of the app below:</p>
-    <a class="button"
-href="https://app-blog-rb7mkyyjt9cpqjwz3kphla.streamlit.app" target="_blank">
+    <a class="button" href="https://app-blog-rb7mkyyjt9cpqjwz3kphla.streamlit.app" target="_blank">
       🚀Launch my streamlit app 
     </a>
     </div>
